@@ -1,75 +1,95 @@
 FaceIt
 
-FaceIt is a facial recognition system project developed in Python. This project captures 100 pictures of an individual's face during the enrollment process and matches the face every time the code is run to authenticate the person.
+FaceIt is a facial recognition system project written in Python. This project captures 100 pictures of an individual during the enrollment phase and matches the captured image with the enrolled images every time the code is run. 
+
+Table of Contents
+
+- Introduction
+- Features
+- Installation
+- Usage
+- Project Structure
+- Contributing
+- License
+
+Introduction
+
+FaceIt leverages machine learning and computer vision techniques to recognize faces. It is built using Python and utilizes OpenCV for image processing tasks. The system captures 100 images of a person's face during enrollment and matches these images with the person during recognition.
 
 Features
 
-- Enrollment: Captures 100 images of the user's face for accurate recognition.
-- Recognition: Matches the user's face with the enrolled images for authentication.
-- User-friendly: Simple and intuitive interface for easy enrollment and recognition.
-
-Requirements
-
-- Python 3.x
-- OpenCV
-- NumPy
-- dlib
+- Enrollment: Capture 100 images of a person's face for accurate recognition.
+- Recognition: Match real-time images with the enrolled images to identify the person.
+- Camera Integration: Support for capturing images using a webcam or IP camera.
+- Configurable: Easily modify the number of images to capture or change the camera settings.
 
 Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/FaceIt.git
-   cd FaceIt
+To get started with FaceIt, follow these steps:
 
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/FaceIt.git
+    cd FaceIt
+    ```
+
+2. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 Usage
 
-1. Enroll a new user:
-   ```bash
-   python create_data.py
+Enrollment
+
+To enroll a new person, run the `create_data.py` script. This script will capture 100 images of the person's face and store them in the `dataset` folder.
+
+```bash
+python create_data.py
+```
 
 
-  Follow the on-screen instructions to capture 100 images of the user's face.
+Recognition
 
-2. Recognize a user:
-   ```bash
-   python faceRecognition.py
+To recognize a person, run the `face_recognize.py` or `faceRecognition.py` script. This script will use the images captured during enrollment to identify the person in real-time.
 
-  The script will match the face with the enrolled images and authenticate the user.
+```bash
+python face_recognize.py
+```
 
-File Structure
+or
 
+```bash
+python faceRecognition.py
+```
+
+IP Camera
+
+To use an IP camera for recognition, run the `ipcam.py` script.
+
+```bash
+python ipcam.py
+```
+
+Project Structure
+
+```
 FaceIt/
-├── data/
-│   ├── enrolled_faces/
-│   └── ...
-├── enroll.py
-├── recognize.py
-├── requirements.txt
-└── README.md
+│
+├── create_data.py                 # Script to capture images for enrollment
+├── face_recognize.py              # Script for face recognition
+├── faceRecognition.py             # Alternative script for face recognition
+├── ipcam.py                       # Script to use IP camera for recognition
+├── functional_representation.txt  # Description of the functional flow
+├── haarcascade_frontalface_default.xml  # Haarcascade file for face detection
+├── dataset/                       # Folder containing the captured images
+│
+└── README.md                      # Project README file
+```
 
-- data/: Directory to store enrolled face images.
-- enroll.py: Script for enrolling a new user.
-- recognize.py: Script for recognizing and authenticating a user.
-- requirements.txt: List of required packages.
 
 Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+Contributions are welcome! If you have any improvements or suggestions, feel free to create a pull request or open an issue.
 
-License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Acknowledgments
-
-- OpenCV: https://opencv.org/
-- dlib: http://dlib.net/
-
-Contact
-
-For any questions or suggestions, please open an issue or contact me at vinu.naruni@gmail.com
----
-
-Feel free to customize the README file further to suit your project's specific details and needs.
